@@ -34,6 +34,8 @@ trap {
 
 ###############################
 
+Get-NetConnectionProfile | Where-Object {$_.NetworkCategory -ne 'DomainAuthenticated'} | Set-NetConnectionProfile -NetworkCategory Private
+
 winrm quickconfig -quiet
 
 Set-Service -Name WinRM -StartupType Automatic
