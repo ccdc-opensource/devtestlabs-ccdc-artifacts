@@ -42,4 +42,4 @@ Set-Service -Name WinRM -StartupType Automatic
 
 Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 
-Write-Output winrm get winrm/config
+winrm get winrm/config
